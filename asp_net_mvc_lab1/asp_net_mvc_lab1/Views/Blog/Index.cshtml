@@ -1,0 +1,14 @@
+﻿@model IEnumerable<asp_net_mvc_lab1.Models.BlogArticleViewModel>
+
+@foreach (var article in Model)
+{
+    <div class="mb-3">
+        <h2>
+            <a asp-controller="Blog" asp-action="Details" asp-route-id="@article.Id">
+                @article.Title
+            </a>
+        </h2>
+        <p class="text-muted">@article.Description</p>
+    </div>
+}
+<a asp-controller="Blog" asp-action="Create" class="btn btn-success mb-3">Create Article</a>
